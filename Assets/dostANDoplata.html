@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-white">
+        <!--madel VXOD-->
+    <div id="vxod-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-white">
+                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="vxod-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Закрыть</span>
+                </button>
+                <div class="py-6 px-6 lg:px-8">
+                    <h3 class="mb-4 text-xl font-medium text-gray-900  text-center">Вход</h3>
+                    <form class="space-y-6" action="#">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" placeholder="name@company.com" required>
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Пароль</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" required>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-lime-300" required>
+                                </div>
+                                <label for="remember" class="ml-2 text-sm font-medium text-gray-900 ">Запомнить меня</label>
+                            </div>
+                            <a href="#" class="text-sm text-blue-700 hover:underline dark:text-lime-500">Забыли пароль?</a>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Вход</button>
+                        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                            Нет аккаунта? <a href="#" class="text-blue-700 hover:underline dark:text-lime-500">Создать аккаунт</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <!--madel REG-->
+    <div id="reg-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-white">
+                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="reg-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Закрыть</span>
+                </button>
+                <div class="py-6 px-6 lg:px-8">
+                    <h3 class="mb-4 text-xl font-medium text-gray-900  text-center">Регистрация</h3>
+                    <form class="space-y-6" action="#">
+                        <div>
+                            <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Фамилия</label>
+                            <input type="firstname" name="firstname" id="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" placeholder="Фамилия" required>
+                        </div>
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Имя</label>
+                            <input type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" placeholder="Имя" required>
+                        </div>
+                        <div>
+                            <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Отчество</label>
+                            <input type="lastname" name="lastname" id="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" placeholder="Отчество" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" placeholder="name@company.com" required>
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Пароль</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lime-500 focus:border-lime-500 block w-full p-2.5" required>
+                        </div>
+                        
+                        <button type="submit" class="w-full text-black bg-lime-500 hover:bg-lime-500 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Регистрация</button>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+<!--nav3-->
+      <nav class="bg-zinc-800  px-2 sm:px-4 py-2.5  ">
+        <div class="container flex flex-wrap items-center justify-between mx-auto ">
+        <a href="../index.html" class="flex items-center">
+            <img src="../img/Лого-PhotoRoom.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+            <span class="self-center text-xl text-white font-semibold whitespace-nowrap">QWR</span>
+        </a>
+        <div class="flex md:order-2">
+
+            <div class="flex items-center w-full md:w-auto mr-3">
+                <button type="button" data-modal-toggle="vxod-modal" class="px-2 text-white md:hover:text-lime-500 md:text-sm lg:text-base font-medium" >Вход</button>
+                <p class="text-white">/</p>
+                <button type="button" data-modal-toggle="reg-modal" class="px-2 text-white md:hover:text-lime-500 md:text-sm lg:text-base font-medium">Регистрация</button>
+            </div>
+
+        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-white rounded-lg md:hidden focus:outline-none  " aria-controls="navbar-cta" aria-expanded="false">
+              <span class="sr-only">Открыть меню</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+          <ul class="flex flex-col p-4 mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm lg:text-lg font-medium   ">
+            <li>
+              <a href="dostANDoplata.html" class="block py-2 pl-3 pr-4 text-white  md:text-lime-500 md:p-0" aria-current="page">Доставка и оплата</a>
+            </li>
+            <li>
+              <a href="O nas.html" class="block py-2 pl-3 pr-4 text-white  md:hover:text-lime-500 md:p-0">О нас</a>
+            </li>
+            <li>
+              <a href="kont.html" class="block py-2 pl-3 pr-4 text-white  md:hover:text-lime-500 md:p-0">Контакты</a>
+            </li>
+            <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-white md:hover:bg-transparent md:border-0 md:hover:text-lime-500 md:p-0 md:w-auto ">Каталог <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-zinc-800 divide-y divide-gray-100 rounded">
+                <ul class="py-1 text-sm text-white " aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700 hover:text-lime-500">Тренировочная одежда</a>
+                  </li>
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700 hover:text-lime-500 ">Экипировка вратаря</a>
+                  </li>
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700  hover:text-lime-500">Бутсы</a>
+                  </li>
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700 hover:text-lime-500">Экипировка игрока</a>
+                  </li>
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700 hover:text-lime-500">Аксессуары</a>
+                  </li>
+                  <li>
+                    <a href="katalog.html" class="block px-4 py-2 hover:bg-zinc-700 hover:text-lime-500">Оборудование для тренировки</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    </header>  
+
+<main class=" container mx-auto pb-4 pl-2 xl:pl-0">
+    <p class="pt-4 pl-4 text-2xl font-bold">Оплата</p>
+   <div class="grid gap-2 grid-cols-1 md:gap-4 md:grid-cols-2 lg:gap-4 lg:grid-cols-3  ">
+<!--1-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+        <svg class="mr-2 w-10 h-8 fill-green-600 " version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="92px" height="92px" viewBox="0 0 92 92" enable-background="new 0 0 92 92" xml:space="preserve">
+     <path id="XMLID_2192_" d="M92,23.4c0-4.1-3.3-7.4-7.4-7.4H7.4C3.3,16,0,19.3,0,23.4v45.3C0,72.7,3.3,76,7.4,76h77.3
+	c4.1,0,7.4-3.3,7.4-7.4V23.4z M84,24v7H8v-7H84z M8,68V43h76v25H8z M76.5,55c0,2.2-1.8,4-4,4h-19c-2.2,0-4-1.8-4-4s1.8-4,4-4h19
+	C74.7,51,76.5,52.8,76.5,55z"/>
+        </svg>
+        <p class="uppercase font-medium">Оплата онлайн</p>
+        </div>
+        <p>Совершая покупку в Нашем интернет-магазине просто оплатите товар картой онлайн. При доставке в другие города это единтсвенный способ оплаты.</p>  
+    </div>
+<!--2-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+            <svg class="mr-2 w-10 h-8 fill-green-600 " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 429.334 429.334" style="enable-background:new 0 0 429.334 429.334;" xml:space="preserve">
+       <g>
+           <path d="M226.378,241.468c0,4.142,3.357,7.5,7.5,7.5s7.5-3.358,7.5-7.5c0-12.123-8.122-22.379-19.209-25.629v-2.479
+               c0-4.142-3.357-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v2.479c-11.087,3.25-19.209,13.506-19.209,25.629c0,12.124,8.122,22.38,19.209,25.63
+               v21.768c-2.57-2.149-4.209-5.376-4.209-8.98c0-4.142-3.357-7.5-7.5-7.5s-7.5,3.358-7.5,7.5c0,12.123,8.122,22.379,19.209,25.629
+               v2.479c0,4.142,3.357,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-2.479c11.087-3.25,19.209-13.506,19.209-25.629s-8.122-22.379-19.209-25.629
+               v-21.769C224.739,234.637,226.378,237.863,226.378,241.468z M202.96,241.468c0-3.604,1.639-6.831,4.209-8.98v17.961
+               C204.599,248.299,202.96,245.072,202.96,241.468z M226.378,279.885c0,3.604-1.639,6.831-4.209,8.98v-17.96
+               C224.739,273.054,226.378,276.281,226.378,279.885z"/>
+           <path d="M429.329,62.028c0-8.284-6.716-15-15-15H15c-8.284,0-15,6.716-15,15l0.004,305.279c0,8.284,6.716,15,15,15h399.33
+               c8.284,0,15-6.716,15-15L429.329,62.028z M349.461,352.306H79.877c-5.709-24.695-25.179-44.165-49.873-49.874V218.92
+               c24.694-5.709,44.164-25.179,49.873-49.874h269.584c5.708,24.693,25.176,44.162,49.868,49.872v56.369v27.147
+               C374.637,308.144,355.169,327.614,349.461,352.306z M59.11,169.046c-4.653,13.644-15.462,24.454-29.106,29.107v-29.107H59.11z
+                M73.966,139.046c2.625-5.01,4.615-10.349,5.903-15.889h269.6c1.288,5.539,3.278,10.879,5.904,15.889H73.966z M399.329,169.046
+               v29.105c-13.642-4.654-24.449-15.463-29.102-29.105H399.329z M399.329,139.046H379.49c-4.107-4.642-7.24-10.052-9.234-15.889
+               h29.073V139.046z M73.838,93.157c2.688-5.08,4.722-10.501,6.031-16.13h269.6c1.309,5.629,3.343,11.05,6.031,16.13H73.838z
+                M59.083,123.157c-1.994,5.837-5.127,11.246-9.234,15.889H30v-15.889H59.083z M399.329,93.157H379.71
+               c-4.213-4.696-7.424-10.191-9.453-16.13h29.073V93.157z M59.082,77.028c-2.029,5.939-5.24,11.434-9.452,16.13H30v-16.13H59.082z
+                M30.004,323.199c13.644,4.653,24.453,15.463,29.106,29.107H30.004V323.199z M370.228,352.306
+               c4.653-13.644,15.462-24.454,29.106-29.107v29.107H370.228z"/>
+           <path d="M214.669,177.417c-45.909,0-83.259,37.35-83.259,83.259s37.35,83.259,83.259,83.259s83.259-37.35,83.259-83.259
+               S260.578,177.417,214.669,177.417z M214.669,323.935c-34.881,0-63.259-28.378-63.259-63.259c0-34.881,28.378-63.259,63.259-63.259
+               s63.259,28.378,63.259,63.259C277.928,295.557,249.55,323.935,214.669,323.935z"/>
+       </g>
+       </svg>
+        <p class="uppercase font-medium">Оплата наличными</p>
+        </div>
+        <p>В Чебоксаах можно просто оплатить курьеру при личной встрече (за исключением доставки транспортной компанией)</p>  
+    </div>
+<!--3-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+            <svg  class="mr-2 w-10 h-8 fill-green-600 " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 511 511" style="enable-background:new 0 0 511 511;" xml:space="preserve">
+       <g>
+           <path d="M454.962,110.751c-0.018-0.185-0.05-0.365-0.081-0.545c-0.011-0.06-0.016-0.122-0.028-0.182
+               c-0.043-0.215-0.098-0.425-0.159-0.632c-0.007-0.025-0.012-0.052-0.02-0.077c-0.065-0.213-0.141-0.421-0.224-0.625
+               c-0.008-0.021-0.015-0.043-0.023-0.064c-0.081-0.195-0.173-0.384-0.269-0.57c-0.016-0.031-0.029-0.063-0.045-0.094
+               c-0.093-0.173-0.196-0.339-0.301-0.504c-0.027-0.042-0.049-0.086-0.077-0.127c-0.103-0.154-0.216-0.3-0.33-0.446
+               c-0.037-0.048-0.07-0.098-0.109-0.145c-0.142-0.173-0.294-0.338-0.451-0.498c-0.015-0.015-0.027-0.031-0.042-0.046l-104-104
+               c-0.018-0.018-0.038-0.033-0.057-0.051c-0.156-0.153-0.317-0.301-0.486-0.44c-0.055-0.045-0.113-0.083-0.169-0.126
+               c-0.138-0.107-0.275-0.214-0.42-0.311c-0.051-0.034-0.105-0.062-0.156-0.095c-0.156-0.099-0.312-0.197-0.475-0.284
+               c-0.036-0.019-0.074-0.035-0.111-0.053c-0.181-0.093-0.365-0.183-0.554-0.262c-0.024-0.01-0.049-0.017-0.074-0.027
+               c-0.202-0.081-0.406-0.157-0.616-0.221c-0.027-0.008-0.054-0.013-0.081-0.021c-0.206-0.06-0.415-0.115-0.628-0.158
+               c-0.063-0.013-0.128-0.018-0.192-0.029c-0.177-0.031-0.354-0.062-0.536-0.08C344.001,0.013,343.751,0,343.5,0h-248
+               C73.72,0,56,17.72,56,39.5v432c0,21.78,17.72,39.5,39.5,39.5h320c21.78,0,39.5-17.72,39.5-39.5v-360
+               C455,111.249,454.987,110.999,454.962,110.751z M351,25.606L429.394,104H375.5c-13.509,0-24.5-10.99-24.5-24.5V25.606z M415.5,496
+               h-320C81.991,496,71,485.01,71,471.5v-432C71,25.99,81.991,15,95.5,15H336v64.5c0,21.78,17.72,39.5,39.5,39.5H440v352.5
+               C440,485.01,429.009,496,415.5,496z"/>
+           <path d="M391.5,248h-48.002c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5H391.5c4.142,0,7.5-3.357,7.5-7.5S395.642,248,391.5,248z
+               "/>
+           <path d="M119.5,263h192.001c4.142,0,7.5-3.357,7.5-7.5s-3.358-7.5-7.5-7.5H119.5c-4.142,0-7.5,3.357-7.5,7.5S115.358,263,119.5,263
+               z"/>
+           <path d="M391.5,152h-200c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h200c4.142,0,7.5-3.357,7.5-7.5S395.642,152,391.5,152z"/>
+           <path d="M119.5,167h40.003c4.142,0,7.5-3.357,7.5-7.5s-3.358-7.5-7.5-7.5H119.5c-4.142,0-7.5,3.357-7.5,7.5S115.358,167,119.5,167z
+               "/>
+           <path d="M391.5,344h-152c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h152c4.142,0,7.5-3.357,7.5-7.5S395.642,344,391.5,344z"/>
+           <path d="M207.5,344h-88c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h88c4.142,0,7.5-3.357,7.5-7.5S211.642,344,207.5,344z"/>
+           <path d="M391.5,200h-272c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h272c4.142,0,7.5-3.357,7.5-7.5S395.642,200,391.5,200z"/>
+           <path d="M391.5,296h-272c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h272c4.142,0,7.5-3.357,7.5-7.5S395.642,296,391.5,296z"/>
+       </g>
+       </svg>
+        <p class="uppercase font-medium">Оплата наложенным платежом СДЭК</p>
+        </div>
+        <p>Откуда бы вы не делали покупку, вы можете оплатить её при получении. Просто выбирайте доставку через ТК СДЭК и в способах оплаты появится "Наложенный платеж". Но учтите: при этом способе оплаты добавится комиссия СДЭКа в размере 4% от всей суммы наложенного платежа</p>  
+    </div>
+
+</div>
+
+<p class="pt-4 pl-4 text-2xl font-bold">Доставка</p>
+   <div class="grid gap-2 grid-cols-1 md:gap-4 md:grid-cols-2 lg:gap-4 lg:grid-cols-3">
+<!--4-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+            <svg class="mr-2 w-10 h-8 fill-green-600 " width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M9.83 8.79L8 9.456V13H6V8.05h.015l5.268-1.918c.244-.093.51-.14.782-.131a2.616 2.616 0 0 1 2.427 1.82c.186.583.356.977.51 1.182A4.992 4.992 0 0 0 19 11v2a6.986 6.986 0 0 1-5.402-2.547l-.697 3.956L15 16.17V23h-2v-5.898l-2.27-1.904-.727 4.127-6.894-1.215.348-1.97 4.924.868L9.83 8.79zM13.5 5.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                </g>
+            </svg>
+        <p class="uppercase font-medium">Курьером</p>
+        </div>
+        <p>Мы сами привезем Вам заказ. Но нам нужен хотя бы 1 день, чтобы собрать все со склада. Если очень срочно – просто скажите нам об этом</p>  
+    </div>
+<!--5-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+            <svg class="mr-2 w-10 h-8 fill-green-600 " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 474 474" style="enable-background:new 0 0 474 474;" xml:space="preserve">
+       <g>
+           <path d="M437.5,59.3h-401C16.4,59.3,0,75.7,0,95.8v282.4c0,20.1,16.4,36.5,36.5,36.5h401c20.1,0,36.5-16.4,36.5-36.5V95.8
+               C474,75.7,457.6,59.3,437.5,59.3z M432.2,86.3L239.5,251.1L46.8,86.3H432.2z M447,378.2c0,5.2-4.3,9.5-9.5,9.5h-401
+               c-5.2,0-9.5-4.3-9.5-9.5V104.9l203.7,174.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.3,0.2,0.5,0.4,0.8,0.5
+               c0.1,0.1,0.2,0.1,0.3,0.2c0.4,0.2,0.8,0.4,1.2,0.6c0.1,0,0.2,0.1,0.3,0.1c0.3,0.1,0.6,0.3,1,0.4c0.1,0,0.3,0.1,0.4,0.1
+               c0.3,0.1,0.6,0.2,0.9,0.2c0.1,0,0.3,0.1,0.4,0.1c0.3,0.1,0.7,0.1,1,0.2c0.1,0,0.2,0,0.3,0c0.4,0,0.9,0.1,1.3,0.1l0,0l0,0
+               c0.4,0,0.9,0,1.3-0.1c0.1,0,0.2,0,0.3,0c0.3,0,0.7-0.1,1-0.2c0.1,0,0.3-0.1,0.4-0.1c0.3-0.1,0.6-0.2,0.9-0.2c0.1,0,0.3-0.1,0.4-0.1
+               c0.3-0.1,0.6-0.2,1-0.4c0.1,0,0.2-0.1,0.3-0.1c0.4-0.2,0.8-0.4,1.2-0.6c0.1-0.1,0.2-0.1,0.3-0.2c0.3-0.2,0.5-0.3,0.8-0.5
+               c0.1-0.1,0.3-0.2,0.4-0.3c0.1-0.1,0.3-0.2,0.4-0.3L447,109.2V378.2z"/>
+       </g>
+       </svg>
+        <p class="uppercase font-medium">Почтой</p>
+        </div>
+        <p>Куда угодно – хоть в Подмосковье, хоть в Зимбабве.  Сроки:  По РФ – в течение 7 рабочих дней (сроки примерные, почта же). Стоимость - 300 рублей  По СНГ – в течение 14 рабочих дней (бывает быстрее, бывают и задержки. Отнеситесь с пониманием). Стоимость зависит от конкретной страны и объема заказа</p>  
+    </div>
+<!--6-->
+    <div>
+        <div class="pt-4 pb-4 flex items-center">
+            <svg class="mr-2 w-10 h-8 fill-green-600 " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 54.999 54.999" style="enable-background:new 0 0 54.999 54.999;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M52.832,20.05c0.056-0.084,0.102-0.177,0.131-0.278c0.121-0.432-0.059-0.891-0.44-1.124L44,13.429V8.5
+			c0-0.553-0.447-1-1-1h-4v-4c0-0.553-0.447-1-1-1H21c-0.553,0-1,0.447-1,1v4h-1c-0.553,0-1,0.447-1,1v4h-5.2
+			c-0.185,0-0.365,0.051-0.523,0.148l-9.8,6c-0.382,0.233-0.561,0.692-0.44,1.124c0.029,0.101,0.075,0.194,0.131,0.278L0.021,30.295
+			c-0.061,0.295,0.013,0.602,0.202,0.836C0.414,31.364,0.699,31.5,1,31.5h2v20c0,0.553,0.447,1,1,1h47c0.553,0,1-0.447,1-1v-20h2
+			c0.301,0,0.586-0.136,0.776-0.369c0.189-0.234,0.264-0.541,0.202-0.836L52.832,20.05z M40,15.5H21h-1v-1h20V15.5z M22,17.5h18v1
+			H22C22,18.5,22,17.5,22,17.5z M42,16.5v-1.95l6.451,3.95H42L42,16.5L42,16.5z M22,4.5h15v3H22C22,7.5,22,4.5,22,4.5z M20,9.5h1h17
+			h4v3h-1H20C20,12.5,20,9.5,20,9.5z M13.082,14.5H18v2c0,0.553,0.447,1,1,1h1v1H6.548L13.082,14.5z M50,50.5H5v-19h45V50.5z
+			 M51,29.5H4H2.231l1.886-9H21h20h9.883l1.886,9H51z"/>
+		<path d="M41,42.399V44.5h-1v2h4v-2h-1v-2.101c2.279-0.465,4-2.485,4-4.899c0-0.553-0.447-1-1-1h-8c-0.553,0-1,0.447-1,1
+			C37,39.914,38.72,41.934,41,42.399z M44.829,38.5c-0.413,1.164-1.525,2-2.829,2s-2.416-0.836-2.829-2H44.829z"/>
+	</g>
+</g>
+</svg>
+        <p class="uppercase font-medium">Транспортной компанией</p>
+        </div>
+        <p>Самый быстрый способ доставки по России и СНГ. Стоимость рассчитывается индивидуально, в зависимости от удаленности и объема заказа. Мы пользуемся ТК СДЭК.  Еще более быстрый способ – DHL. Но стоимость этой доставки эквивалентна стоимости транспорта (дорогая, в общем). Срок доставки куда угодно – 1 день. Если нужна такая срочность – просто попросите нас об этом.</p>  
+    </div>
+
+    
+   </div>
+
+</main>
+
+
+
+<footer class="bg-zinc-800">
+    <div class="container mx-auto">
+    <div class="grid grid-cols-2 gap-8 pt-8 pb-2 px-6 md:grid-cols-4">
+        <div>
+            <h2 class="mb-6 text-sm font-bold text-white uppercase">Информация</h2>
+            <ul class="text-white">
+                <li class="mb-2">
+                    <a href="dostANDoplata.html" class=" ">Доставка и оплата</a>
+                </li>
+                <li class="mb-2">
+                    <a href="dogovorofert.html" class="">Договоро Оферты</a>
+                </li>
+                <li class="mb-2">
+                    <a href="konfinform.html" class="">Конфиденциальность информации</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-bold text-white uppercase">О нас</h2>
+            <ul class="text-white">
+                <li class="mb-2">
+                    <a href="O nas.html" class="">О компании</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-bold text-white uppercase">Личный кабинет</h2>
+            <ul class="text-white">
+                <li class="mb-2">
+                    <a href="korzina.html" class="">Корзина</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-bold text-white uppercase">Контакты</h2>
+            <ul class="text-white">
+                <li class="mb-2">
+                    <p><span class="font-medium">Адрес:</span> Москва, Нижняя Красносельская улица, 35с52, 2 этаж</p>
+                </li>
+                <li class="mb-2">
+                    <p><span class="font-medium">Время работы:</span>  с 10:00 до 21:00</p>
+                </li>
+                <li class="mb-2">
+                    <p><span class="font-medium">Телефон:</span> 8 (800) 300-64-56</p>
+                </li>
+                <li class="mb-2">
+                    <p><span class="font-medium">Почта:</span> futform@mail.ru</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex justify-center px-4 pb-6">
+        <span class="text-sm text-white  sm:text-center">© 2022 <a href="index.html">QWR™</a>
+        </span>
+        <div class="flex pl-10 space-x-6 sm:justify-center md:mt-0">
+            <a href="#" class="text-white hover:text-gray-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Facebook page</span>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Instagram page</span>
+            </a>
+        </div>
+    </div>
+</div>
+</footer>
+  <script src="js.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+</body>
+</html>
